@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- COMP 4621 Assignment 1 - part 3 click counter -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Subramaniam | Click Counter</title>
+    <link rel="stylesheet" href="../part2/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .counter-box { text-align: center; }
+        .counter-value {
+            font-size: 4em;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 10px 0 20px;
+            display: block;
+        }
+        .counters { display: flex; gap: 24px; flex-wrap: wrap; }
+        .counters section { flex: 1 1 280px; }
+    </style>
+
+    <script>
+    // part 3 - button + counter in a div, click adds 1
+
+    // jquery version
+    $(document).ready(function () {
+        var count = 0;
+
+        $("#incrementBtn").click(function () {
+            count++;
+            $("#counter").text(count);
+        });
+
+        $("#resetBtn").click(function () {
+            count = 0;
+            $("#counter").text(count);
+        });
+    });
+
+    // same thing with plain js / DOM
+    window.addEventListener("load", function () {
+        var domCount = 0;
+        var display = document.getElementById("domCounter");
+
+        document.getElementById("domIncrementBtn").addEventListener("click", function () {
+            domCount++;
+            display.textContent = domCount;
+        });
+
+        document.getElementById("domResetBtn").addEventListener("click", function () {
+            domCount = 0;
+            display.textContent = domCount;
+        });
+    });
+    </script>
+</head>
+<body class="theme-court">
+
+    <header>
+        <h1>Aditya Subramaniam</h1>
+        <p>COMP 4621 Assignment 1 &middot; Part 3: DOM &amp; jQuery</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../part2/index.php">My Profile</a></li>
+            <li><a href="../part2/course.php">COMP 4621</a></li>
+            <li><a href="../part2/contact.php">Contact Me</a></li>
+            <li><a href="../part2/messages.php">Messages</a></li>
+            <li><a href="counter.html" class="current">Click Counter</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="counters">
+            <section>
+                <h2>jQuery Counter</h2>
+                <div id="counterBox" class="counter-box">
+                    <span id="counter" class="counter-value">0</span>
+                    <button type="button" id="incrementBtn">Click Me (+1)</button>
+                    <button type="button" id="resetBtn" class="secondary">Reset</button>
+                </div>
+            </section>
+
+            <section>
+                <h2>Plain DOM Counter</h2>
+                <div id="domCounterBox" class="counter-box">
+                    <span id="domCounter" class="counter-value">0</span>
+                    <button type="button" id="domIncrementBtn">Click Me (+1)</button>
+                    <button type="button" id="domResetBtn" class="secondary">Reset</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aditya Subramaniam &middot; COMP 4621 Assignment 1</p>
+    </footer>
+
+</body>
+</html>

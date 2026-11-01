@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- COMP 4621 Assignment 1 - contact form page -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Subramaniam | Contact Me</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body class="theme-court preload">
+
+    <header>
+        <h1>Aditya Subramaniam</h1>
+        <p>Computing Science student &middot; Kamloops, BC</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">My Profile</a></li>
+            <li><a href="course.html">COMP 4621</a></li>
+            <li><a href="contact.html" class="current">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Contact Me</h2>
+            <p>Have a question, or want to play badminton? Send me a message. All fields are required.</p>
+
+            <div id="formStatus" role="status"></div>
+
+            <!-- novalidate so my js does the checking instead of the browser -->
+            <form id="contactForm" action="#" method="post" data-static="true" novalidate>
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" maxlength="100">
+                    <span class="error-msg" id="nameError"></span>
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" maxlength="150">
+                    <span class="error-msg" id="emailError"></span>
+                </div>
+                <div class="field">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" maxlength="150">
+                    <span class="error-msg" id="subjectError"></span>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" maxlength="2000"></textarea>
+                    <span class="error-msg" id="messageError"></span>
+                </div>
+                <input type="submit" value="Send Message">
+                <input type="reset" value="Clear">
+            </form>
+        </section>
+
+        <section>
+            <h2>Change the Page Colours</h2>
+            <div class="theme-controls">
+                <button type="button" id="nextColourBtn">Next Colour Scheme</button>
+                <button type="button" id="autoColourBtn" class="secondary">Start Auto Colours</button>
+                <span id="themeName"></span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aditya Subramaniam &middot; COMP 4621 Assignment 1</p>
+    </footer>
+
+</body>
+</html>
